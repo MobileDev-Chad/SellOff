@@ -7,18 +7,14 @@ import {
   Platform,
 } from "react-native";
 
+import WelcomeScreen from "./src/screens/WelcomeScreen";
+import ViewImageScreen from "./src/screens/ViewImageScreen";
+
+
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </SafeAreaView>
+    <ViewImageScreen />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
+
