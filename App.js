@@ -17,10 +17,16 @@ import Screen from "./src/components/Screen";
 import Icon from "./src/components/Icon";
 import ListItem from "./src/components/ListItem";
 import AccountScreen from "./src/screens/AccountScreen";
+import ListingsScreen from "./src/screens/ListingsScreen";
+import AppTextInput from "./src/components/AppTextInput";
+import AppPicker from "./src/components/AppPicker";
 
 const App = () => {
   return (
-  <AccountScreen/>
+    <Screen>
+      <AppPicker icon="apps" placeholder="Category" />
+       <AppTextInput placeholder="email" icon="email" />
+    </Screen>
   );
 };
 
