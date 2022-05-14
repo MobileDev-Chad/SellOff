@@ -7,6 +7,8 @@ import {
   Platform,
 } from "react-native";
 
+import React, {useState} from "react";
+
 import WelcomeScreen from "./src/screens/WelcomeScreen";
 import ViewImageScreen from "./src/screens/ViewImageScreen";
 import AppButton from "./src/components/AppButton";
@@ -21,11 +23,31 @@ import ListingsScreen from "./src/screens/ListingsScreen";
 import AppTextInput from "./src/components/AppTextInput";
 import AppPicker from "./src/components/AppPicker";
 
+const categories = [
+  {
+    label: "Furniture",
+    value: 1,
+  },
+  {
+    label: "Clothing",
+    value: 2,
+  },
+  {
+    label: "Camera",
+    value: 3,
+  },
+];
+
 const App = () => {
+const [category, setCategory] = useState();
+
   return (
     <Screen>
-      <AppPicker icon="apps" placeholder="Category" />
-       <AppTextInput placeholder="email" icon="email" />
+      <AppPicker 
+      selectedItem={category}
+      onSelectItem={item => setCategory(item)}
+      items={categories} icon="apps" placeholder="Category" />
+      <AppTextInput placeholder="email" icon="email" />
     </Screen>
   );
 };
