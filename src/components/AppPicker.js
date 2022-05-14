@@ -1,35 +1,46 @@
-import { Modal, StyleSheet, TextInput, TouchableWithoutFeedback, View } from "react-native";
-import React, {useState} from "react";
+import {
+  Modal,
+  StyleSheet,
+  TextInput,
+  TouchableWithoutFeedback,
+  View,
+  Button,
+} from "react-native";
+import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "./AppText";
+import Screen from "./Screen";
 
 import defaultStyles from "../../constants/styles";
 
 export default function AppPicker({ icon, placeholder, ...props }) {
-const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
-      <>
-      <TouchableWithoutFeedback onPress={()=> setModalVisible(true)}>
-          <View style={styles.container}>
-      {icon && (
-        <MaterialCommunityIcons
-          name={icon}
-          size={20}
-          color={defaultStyles.COLORS.medium}
-          style={styles.icon}
-        />
-      )}
-      <AppText style={styles.text}>{placeholder}</AppText>
-      <MaterialCommunityIcons
-          name="chevron-down"
-          size={20}
-          color={defaultStyles.COLORS.medium}
-         
-        />
-    </View>
+    <>
+      <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
+        <View style={styles.container}>
+          {icon && (
+            <MaterialCommunityIcons
+              name={icon}
+              size={20}
+              color={defaultStyles.COLORS.medium}
+              style={styles.icon}
+            />
+          )}
+          <AppText style={styles.text}>{placeholder}</AppText>
+          <MaterialCommunityIcons
+            name="chevron-down"
+            size={20}
+            color={defaultStyles.COLORS.medium}
+          />
+        </View>
       </TouchableWithoutFeedback>
-    <Modal visible={modalVisible} animationType="slide"></Modal>
+      <Modal visible={modalVisible} animationType="slide">
+        <Screen>
+          <Button title="Close" onPress={() => setModalVisible(false)} />
+        </Screen>
+      </Modal>
     </>
   );
 }
@@ -47,6 +58,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   text: {
-      flex: 1,
-  }
+    flex: 1,
+  },
 });
