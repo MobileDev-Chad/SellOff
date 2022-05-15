@@ -15,7 +15,13 @@ import PickerItem from "./PickerItem";
 
 import defaultStyles from "../../constants/styles";
 
-export default function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
+export default function AppPicker({
+  icon,
+  items,
+  onSelectItem,
+  placeholder,
+  selectedItem,
+}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -30,7 +36,14 @@ export default function AppPicker({ icon, items, onSelectItem, placeholder, sele
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>{selectedItem ? selectedItem.label :placeholder}</AppText>
+
+
+           {selectedItem ? (
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
+
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -47,8 +60,9 @@ export default function AppPicker({ icon, items, onSelectItem, placeholder, sele
             renderItem={({ item }) => (
               <PickerItem
                 label={item.label}
-                onPress={() => {setModalVisible(false);
-                onSelectItem(item);
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
                 }}
               />
             )}
@@ -70,6 +84,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
+  },
+  placeholder: {
+    color: defaultStyles.COLORS.medium,
+    flex: 1,
   },
   text: {
     flex: 1,

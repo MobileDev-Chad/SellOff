@@ -2,7 +2,8 @@ import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { COLORS, FONTS, SIZES } from "../../constants/theme";
+import { COLORS, FONTS, SIZES } from "../../../constants/theme";
+
 
 export default function ListItemDeleteAction({onPress}) {
   const { container } = styles;
