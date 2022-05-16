@@ -2,13 +2,13 @@ import React from 'react'
 import { View, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native'
 
 import AppText from './Text'
-import { COLORS, FONTS, SIZES } from '../../constants/theme'
+import { COLORS } from '../../constants/theme'
 
-export default Card = ({ title, subTitle, image, onPress }) => {
+export default Card = ({ title, subTitle, imageUrl, onPress }) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image style={styles.image} source={image} />
+        <Image style={styles.image} source={{uri:imageUrl}} />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>

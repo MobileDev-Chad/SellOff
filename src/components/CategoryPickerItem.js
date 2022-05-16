@@ -27,8 +27,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '33%',
   },
+
   label: {
     marginTop: 5,
+    fontSize: 14,
     textAlign: 'center',
   },
 })
