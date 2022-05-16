@@ -1,28 +1,28 @@
-import React from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import React from 'react'
+import { StyleSheet, View, FlatList } from 'react-native'
 
-import { ListItem, ListItemSeperator } from "../components/lists";
-import Screen from "../components/Screen";
-import Icon from "../components/Icon";
+import { ListItem, ListItemSeperator } from '../components/lists'
+import Screen from '../components/Screen'
+import Icon from '../components/Icon'
 
-import { COLORS, FONTS, SIZES } from "../../constants/theme";
+import { COLORS, FONTS, SIZES } from '../../constants/theme'
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: 'My Listings',
     icon: {
-      name: "format-list-bulleted",
+      name: 'format-list-bulleted',
       backgroundColor: COLORS.primary,
     },
   },
   {
-    title: "My Messages",
+    title: 'My Messages',
     icon: {
-      name: "email",
+      name: 'email',
       backgroundColor: COLORS.secondary,
     },
   },
-];
+]
 
 function AccountScreen(props) {
   return (
@@ -31,11 +31,11 @@ function AccountScreen(props) {
         <ListItem
           title="Chadwin Allotey"
           subTitle="chadwin.allotey@gmail.com"
-          image={require("../../assets/images/mosh.jpg")}
+          image={require('../../assets/images/mosh.jpg')}
         />
       </View>
       <View style={styles.container}>
-      <FlatList
+        <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
           ItemSeparatorComponent={ListItemSeperator}
@@ -51,27 +51,22 @@ function AccountScreen(props) {
             />
           )}
         />
-     </View>
-     <ListItem 
-     title= "Log Out"
-     IconComponent={
-        <Icon name = "logout"
-        backgroundColor="#ffe66d"
-        />
-
-     }
-     />
+      </View>
+      <ListItem
+        title="Log Out"
+        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+      />
     </Screen>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-    screen: {
-        backgroundColor: COLORS.light
-    },
+  screen: {
+    backgroundColor: COLORS.light,
+  },
   container: {
     marginVertical: 20,
   },
-});
+})
 
-export default AccountScreen;
+export default AccountScreen

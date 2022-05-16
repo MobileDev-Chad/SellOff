@@ -1,13 +1,20 @@
-import React from "react";
-import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
-import {MaterialCommunityIcons} from '@expo/vector-icons'
-import Swipeable from "react-native-gesture-handler/Swipeable";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import React from 'react'
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import AppText from "../AppText";
-import { COLORS, FONTS, SIZES } from "../../../constants/theme";
+import AppText from '../Text'
+import { COLORS, FONTS, SIZES } from '../../../constants/theme'
 
-function ListItem({ title, subTitle, image, IconComponent,onPress, renderRightActions }) {
+function ListItem({
+  title,
+  subTitle,
+  image,
+  IconComponent,
+  onPress,
+  renderRightActions,
+}) {
   return (
     <GestureHandlerRootView>
       <Swipeable renderRightActions={renderRightActions}>
@@ -16,41 +23,50 @@ function ListItem({ title, subTitle, image, IconComponent,onPress, renderRightAc
             {IconComponent}
             {image && <Image style={styles.image} source={image} />}
             <View style={styles.detailContainer}>
-              <AppText style={styles.title} numberOfLines={1} >{title}</AppText>
-             {subTitle && <AppText style={styles.subTitle} numberOfLines={2} >{subTitle}</AppText>}
+              <AppText style={styles.title} numberOfLines={1}>
+                {title}
+              </AppText>
+              {subTitle && (
+                <AppText style={styles.subTitle} numberOfLines={2}>
+                  {subTitle}
+                </AppText>
+              )}
             </View>
-            <MaterialCommunityIcons color={COLORS.medium} name="chevron-right" size={25} />
+            <MaterialCommunityIcons
+              color={COLORS.medium}
+              name="chevron-right"
+              size={25}
+            />
           </View>
         </TouchableHighlight>
       </Swipeable>
     </GestureHandlerRootView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: 15,
     backgroundColor: COLORS.white,
   },
   detailContainer: {
     marginLeft: 10,
-    justifyContent: "center",
-    flex:1,
+    justifyContent: 'center',
+    flex: 1,
   },
   image: {
     width: 70,
     height: 70,
     borderRadius: 35,
-    
   },
   subTitle: {
     color: COLORS.medium,
   },
   title: {
-    fontWeight: "500",
+    fontWeight: '500',
   },
-});
+})
 
-export default ListItem;
+export default ListItem

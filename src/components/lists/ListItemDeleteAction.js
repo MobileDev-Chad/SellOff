@@ -1,12 +1,11 @@
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
-import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import React from 'react'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { COLORS, FONTS, SIZES } from "../../../constants/theme";
+import { COLORS, FONTS, SIZES } from '../../../constants/theme'
 
-
-export default function ListItemDeleteAction({onPress}) {
-  const { container } = styles;
+export default function ListItemDeleteAction({ onPress }) {
+  const { container } = styles
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={container}>
@@ -17,14 +16,14 @@ export default function ListItemDeleteAction({onPress}) {
         />
       </View>
     </TouchableWithoutFeedback>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.danger,
     width: 70,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-});
+})

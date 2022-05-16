@@ -6,28 +6,31 @@ import {
   View,
   Button,
   FlatList,
-} from "react-native";
-import React, { useState } from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
-import Screen from "./Screen";
-import PickerItem from "./PickerItem";
+} from 'react-native'
+import React, { useState } from 'react'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import AppText from './Text'
+import Screen from './Screen'
+import PickerItem from './PickerItem'
 
-import defaultStyles from "../../constants/styles";
+import defaultStyles from '../../constants/styles'
 
 export default function AppPicker({
   icon,
   items,
+  numberOfColumns = 1,
   onSelectItem,
+  PickerItemComponent = PickerItem,
   placeholder,
   selectedItem,
+  width = '100%',
 }) {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false)
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -37,8 +40,7 @@ export default function AppPicker({
             />
           )}
 
-
-           {selectedItem ? (
+          {selectedItem ? (
             <AppText style={styles.text}>{selectedItem.label}</AppText>
           ) : (
             <AppText style={styles.placeholder}>{placeholder}</AppText>
@@ -57,12 +59,14 @@ export default function AppPicker({
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
+                item={item}
                 label={item.label}
                 onPress={() => {
-                  setModalVisible(false);
-                  onSelectItem(item);
+                  setModalVisible(false)
+                  onSelectItem(item)
                 }}
               />
             )}
@@ -70,15 +74,14 @@ export default function AppPicker({
         </Screen>
       </Modal>
     </>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultStyles.COLORS.light,
     borderRadius: 25,
-    flexDirection: "row",
-    width: "100%",
+    flexDirection: 'row',
     padding: 15,
     marginVertical: 10,
   },
@@ -92,4 +95,4 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
-});
+})
