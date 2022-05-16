@@ -1,12 +1,12 @@
 import React from 'react'
 import { View } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-function Icon({
+export default Icon = ({
   name,
   size = 40,
   backgroundColor = '#000',
   iconColor = '#fff',
-}) {
+}) => {
   return (
     <View
       style={{
@@ -22,5 +22,3 @@ function Icon({
     </View>
   )
 }
-
-export default Icon

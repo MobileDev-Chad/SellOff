@@ -3,7 +3,7 @@ import React from 'react'
 
 import { COLORS, FONTS, SIZES } from '../../constants/theme'
 
-const AppButton = ({ title, onPress, color = 'primary' }) => {
+export default AppButton = ({ title, onPress, color = 'primary' }) => {
   const { button, text } = styles
 
   return (
@@ -34,4 +34,3 @@ const styles = StyleSheet.create({
   },
 })
 
-export default AppButton

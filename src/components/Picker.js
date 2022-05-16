@@ -15,7 +15,7 @@ import PickerItem from './PickerItem'
 
 import defaultStyles from '../../constants/styles'
 
-export default function AppPicker({
+export default AppPicker = ({
   icon,
   items,
   numberOfColumns = 1,
@@ -24,7 +24,7 @@ export default function AppPicker({
   placeholder,
   selectedItem,
   width = '100%',
-}) {
+}) => {
   const [modalVisible, setModalVisible] = useState(false)
 
   return (

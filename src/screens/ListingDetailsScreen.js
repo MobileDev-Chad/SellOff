@@ -3,18 +3,20 @@ import { View, Image, StyleSheet } from 'react-native'
 import AppText from '../components/Text'
 
 import { ListItem } from '../components/lists'
-import { COLORS, FONTS, SIZES } from '../../constants/theme'
+import { COLORS } from '../../constants/theme'
 
-function ListingDetailsScreen(props) {
+export default ListingDetailsScreen = ({ route }) => {
+  const listing = route.params
+
   return (
     <View>
       <Image
         style={styles.image}
-        source={require('../../assets/images/jacket.jpg')}
+        source={listing.image}
       />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Red jacket for sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>{listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../../assets/images/mosh.jpg')}
@@ -49,5 +51,3 @@ const styles = StyleSheet.create({
     marginVertical: 40,
   },
 })
-
-export default ListingDetailsScreen

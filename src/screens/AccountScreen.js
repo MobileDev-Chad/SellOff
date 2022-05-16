@@ -4,8 +4,9 @@ import { StyleSheet, View, FlatList } from 'react-native'
 import { ListItem, ListItemSeperator } from '../components/lists'
 import Screen from '../components/Screen'
 import Icon from '../components/Icon'
+import routes from '../navigation/routes'
 
-import { COLORS, FONTS, SIZES } from '../../constants/theme'
+import { COLORS } from '../../constants/theme'
 
 const menuItems = [
   {
@@ -24,7 +25,7 @@ const menuItems = [
   },
 ]
 
-function AccountScreen(props) {
+export default AccountScreen = ({navigation}) => {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -48,6 +49,7 @@ function AccountScreen(props) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={()=>navigation.navigate(routes.MESSAGES)}
             />
           )}
         />
@@ -68,5 +70,3 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
 })
-
-export default AccountScreen

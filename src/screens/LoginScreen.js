@@ -14,7 +14,7 @@ const validationSchema = yup.object().shape({
   password: yup.string().required().min(6).label('Password'),
 })
 
-export default function LoginScreen() {
+export default LoginScreen = () => {
   return (
     <Screen style={styles.container}>
       <Image

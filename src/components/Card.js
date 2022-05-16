@@ -1,18 +1,20 @@
 import React from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, TouchableWithoutFeedback } from 'react-native'
 
 import AppText from './Text'
 import { COLORS, FONTS, SIZES } from '../../constants/theme'
 
-function Card({ title, subTitle, image }) {
+export default Card = ({ title, subTitle, image, onPress }) => {
   return (
-    <View style={styles.card}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle}</AppText>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={image} />
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title}>{title}</AppText>
+          <AppText style={styles.subTitle}>{subTitle}</AppText>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 
@@ -38,5 +40,3 @@ const styles = StyleSheet.create({
     marginBottom: 7,
   },
 })
-
-export default Card

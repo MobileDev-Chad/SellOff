@@ -22,7 +22,7 @@ const initisalMessages = [
   },
 ]
 
-export default function MessagesScreen(props) {
+export default MessagesScreen = (props) => {
   const [messages, setMessages] = useState(initisalMessages)
   const [refreshing, setRefreshing] = useState(false)
 

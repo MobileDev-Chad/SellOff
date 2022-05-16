@@ -2,9 +2,9 @@ import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { COLORS, FONTS, SIZES, icons, images } from '../../constants/theme'
+import { COLORS } from '../../constants/theme'
 
-const ViewImageScreen = (props) => {
+export default ViewImageScreen = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}>
@@ -47,4 +47,3 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ViewImageScreen

@@ -3,7 +3,7 @@ import { Text, StyleSheet } from 'react-native'
 
 import defaultStyles from '../../constants/styles'
 
-function AppText({ children, style, ...props }) {
+export default AppText = ({ children, style, ...props }) => {
   return (
     <Text style={[defaultStyles.text, style]} {...props}>
       {children}
@@ -12,5 +12,3 @@ function AppText({ children, style, ...props }) {
 }
 
 const styles = StyleSheet.create({})
-
-export default AppText

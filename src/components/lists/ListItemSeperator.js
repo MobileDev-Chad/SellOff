@@ -3,7 +3,7 @@ import React from 'react'
 
 import { COLORS, FONTS, SIZES } from '../../../constants/theme'
 
-export default function ListItemSeperator() {
+export default ListItemSeperator = () => {
   const { seperator } = styles
   return <View style={seperator} />
 }

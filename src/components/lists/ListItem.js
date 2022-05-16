@@ -7,14 +7,14 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import AppText from '../Text'
 import { COLORS, FONTS, SIZES } from '../../../constants/theme'
 
-function ListItem({
+export default ListItem = ({
   title,
   subTitle,
   image,
   IconComponent,
   onPress,
   renderRightActions,
-}) {
+}) => {
   return (
     <GestureHandlerRootView>
       <Swipeable renderRightActions={renderRightActions}>
@@ -68,5 +68,3 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 })
-
-export default ListItem
