@@ -13,7 +13,6 @@
   "author": "Mosh Hamedani",
   "license": "ISC",
   "dependencies": {
-    "apisauce": "^2.1.5",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "config": "^3.3.1",

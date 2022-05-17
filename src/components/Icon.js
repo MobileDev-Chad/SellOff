@@ -1,6 +1,6 @@
-import React from 'react'
-import { View } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react';
+import { View } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default Icon = ({
   name,
   size = 40,
@@ -20,5 +20,5 @@ export default Icon = ({
     >
       <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
     </View>
-  )
-}
+  );
+};

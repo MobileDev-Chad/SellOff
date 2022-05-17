@@ -1,8 +1,8 @@
-import React from 'react'
-import { Image, StyleSheet, View } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { COLORS } from '../../constants/theme'
+import { COLORS } from '../../constants/theme';
 
 export default ViewImageScreen = (props) => {
   return (
@@ -23,8 +23,8 @@ export default ViewImageScreen = (props) => {
         source={require('../../assets/images/chair.jpg')}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   closeIcon: {
@@ -45,5 +45,4 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-})
-
+});

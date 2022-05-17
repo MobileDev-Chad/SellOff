@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
-import React, { useState } from 'react'
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import React, { useState } from 'react';
 import {
   ListItem,
   ListItemSeperator,
   ListItemDeleteAction,
-} from '../components/lists'
-import Screen from '../components/Screen'
+} from '../components/lists';
+import Screen from '../components/Screen';
 
 const initisalMessages = [
   {
@@ -20,16 +20,16 @@ const initisalMessages = [
     desription: 'D2',
     image: require('../../assets/images/mosh.jpg'),
   },
-]
+];
 
 export default MessagesScreen = (props) => {
-  const [messages, setMessages] = useState(initisalMessages)
-  const [refreshing, setRefreshing] = useState(false)
+  const [messages, setMessages] = useState(initisalMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
     //Delete the message from messages
-    setMessages(messages.filter((m) => m.id !== message.id))
-  }
+    setMessages(messages.filter((m) => m.id !== message.id));
+  };
   return (
     <Screen>
       <FlatList
@@ -56,11 +56,11 @@ export default MessagesScreen = (props) => {
               desription: 'D2',
               image: require('../../assets/images/mosh.jpg'),
             },
-          ])
+          ]);
         }}
       />
     </Screen>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

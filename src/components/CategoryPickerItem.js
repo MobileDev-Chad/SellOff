@@ -1,8 +1,8 @@
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import React from 'react';
 
-import Icon from './Icon'
-import Text from './Text'
+import Icon from './Icon';
+import Text from './Text';
 
 // PickerItem
 export default CategoryPickerItem = ({ item, onPress }) => {
@@ -17,8 +17,8 @@ export default CategoryPickerItem = ({ item, onPress }) => {
       </TouchableOpacity>
       <Text style={styles.label}>{item.label}</Text>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
   },
-})
+});

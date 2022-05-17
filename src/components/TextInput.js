@@ -1,8 +1,8 @@
-import { StyleSheet, TextInput, View } from 'react-native'
-import React from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { StyleSheet, TextInput, View } from 'react-native';
+import React from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import defaultStyles from '../../constants/styles'
+import defaultStyles from '../../constants/styles';
 
 export default AppTextInput = ({ icon, width = '100%', ...props }) => {
   return (
@@ -21,8 +21,8 @@ export default AppTextInput = ({ icon, width = '100%', ...props }) => {
         {...props}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
-})
+});

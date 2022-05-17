@@ -1,11 +1,11 @@
-import React from 'react'
-import { View, StyleSheet, Image, TouchableHighlight } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-import Swipeable from 'react-native-gesture-handler/Swipeable'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import React from 'react';
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import AppText from '../Text'
-import { COLORS, FONTS, SIZES } from '../../../constants/theme'
+import AppText from '../Text';
+import { COLORS } from '../../../constants/theme';
 
 export default ListItem = ({
   title,
@@ -41,8 +41,8 @@ export default ListItem = ({
         </TouchableHighlight>
       </Swipeable>
     </GestureHandlerRootView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: '500',
   },
-})
+});

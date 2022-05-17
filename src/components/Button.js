@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
 
-import { COLORS, FONTS, SIZES } from '../../constants/theme'
+import { COLORS, SIZES } from '../../constants/theme';
 
 export default AppButton = ({ title, onPress, color = 'primary' }) => {
-  const { button, text } = styles
+  const { button, text } = styles;
 
   return (
     <TouchableOpacity
@@ -13,8 +13,8 @@ export default AppButton = ({ title, onPress, color = 'primary' }) => {
     >
       <Text style={text}>{title}</Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   button: {
@@ -32,5 +32,4 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: 'bold',
   },
-})
-
+});

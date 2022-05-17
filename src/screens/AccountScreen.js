@@ -1,12 +1,12 @@
-import React from 'react'
-import { StyleSheet, View, FlatList } from 'react-native'
+import React from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
 
-import { ListItem, ListItemSeperator } from '../components/lists'
-import Screen from '../components/Screen'
-import Icon from '../components/Icon'
-import routes from '../navigation/routes'
+import { ListItem, ListItemSeperator } from '../components/lists';
+import Screen from '../components/Screen';
+import Icon from '../components/Icon';
+import routes from '../navigation/routes';
 
-import { COLORS } from '../../constants/theme'
+import { COLORS } from '../../constants/theme';
 
 const menuItems = [
   {
@@ -23,9 +23,9 @@ const menuItems = [
       backgroundColor: COLORS.secondary,
     },
   },
-]
+];
 
-export default AccountScreen = ({navigation}) => {
+export default AccountScreen = ({ navigation }) => {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -49,7 +49,7 @@ export default AccountScreen = ({navigation}) => {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
-              onPress={()=>navigation.navigate(routes.MESSAGES)}
+              onPress={() => navigation.navigate(routes.MESSAGES)}
             />
           )}
         />
@@ -59,8 +59,8 @@ export default AccountScreen = ({navigation}) => {
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
     </Screen>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   screen: {
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
   },
-})
+});

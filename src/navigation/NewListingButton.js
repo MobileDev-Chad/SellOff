@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { COLORS } from '../../constants'
+import { COLORS } from '../../constants';
 
 export default NewListingButton = ({ onPress }) => {
   return (
@@ -15,8 +15,8 @@ export default NewListingButton = ({ onPress }) => {
         />
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
     borderColor: COLORS.white,
     borderRadius: 40,
     borderWidth: 10,
-    bottom: 20,
+    bottom: 22,
     height: 80,
     justifyContent: 'center',
     width: 80,
   },
-})
+});

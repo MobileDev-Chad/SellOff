@@ -2,9 +2,9 @@ import client from './client'
 
 const endpoint = '/listings'
 
-const getListings = () => client.get(endpoint)
+export const getListings = () => client.get(endpoint)
 
-const addListing = (listing) => {
+export const addListing = (listing) => {
   const data = new FormData()
   data.append('title', listing.title)
   data.append('price', listing.price)

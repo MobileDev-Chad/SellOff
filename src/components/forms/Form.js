@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Formik } from 'formik'
+import { StyleSheet } from 'react-native';
+import React from 'react';
+import { Formik } from 'formik';
 
 export default AppForm = ({
   initialValues,
@@ -16,7 +16,7 @@ export default AppForm = ({
     >
       {() => <>{children}</>}
     </Formik>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

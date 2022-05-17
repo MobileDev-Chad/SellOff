@@ -1,14 +1,14 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import AccountNavigator from './AccountNavigator'
-import FeedNavigator from './FeedNavigator'
-import ListingEditScreen from '../screens/ListingEditScreen'
-import NewListingButton from './NewListingButton'
-import routes from './routes'
+import AccountNavigator from './AccountNavigator';
+import FeedNavigator from './FeedNavigator';
+import ListingEditScreen from '../screens/ListingEditScreen';
+import NewListingButton from './NewListingButton';
+import routes from './routes';
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
@@ -52,6 +52,6 @@ const AppNavigator = () => (
       }}
     />
   </Tab.Navigator>
-)
+);
 
-export default AppNavigator
+export default AppNavigator;

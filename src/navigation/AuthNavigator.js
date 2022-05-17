@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import LoginScreen from '../screens/LoginScreen'
-import RegisterScreen from '../screens/RegisterScreen'
-import WelcomeScreen from '../screens/WelcomeScreen'
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default AuthNavigator = () => (
-  <Stack.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+  <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
     <Stack.Screen
       name="Welcome"
       component={WelcomeScreen}
@@ -17,4 +17,4 @@ export default AuthNavigator = () => (
     <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Register" component={RegisterScreen} />
   </Stack.Navigator>
-)
+);

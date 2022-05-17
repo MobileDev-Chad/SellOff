@@ -1,18 +1,18 @@
-import { StyleSheet, Image } from 'react-native'
-import React from 'react'
-import * as yup from 'yup'
+import { StyleSheet, Image } from 'react-native';
+import React from 'react';
+import * as yup from 'yup';
 
-import Screen from '../components/Screen'
+import Screen from '../components/Screen';
 import {
   AppForm as Form,
   AppFormField as FormField,
   SubmitButton,
-} from '../components/forms'
+} from '../components/forms';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required().email().label('Email'),
   password: yup.string().required().min(6).label('Password'),
-})
+});
 
 export default LoginScreen = () => {
   return (
@@ -48,8 +48,8 @@ export default LoginScreen = () => {
         <SubmitButton title="Login" />
       </Form>
     </Screen>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 20,
   },
-})
+});

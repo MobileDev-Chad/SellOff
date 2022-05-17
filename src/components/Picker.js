@@ -1,19 +1,18 @@
 import {
   Modal,
   StyleSheet,
-  TextInput,
   TouchableWithoutFeedback,
   View,
   Button,
   FlatList,
-} from 'react-native'
-import React, { useState } from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-import AppText from './Text'
-import Screen from './Screen'
-import PickerItem from './PickerItem'
+} from 'react-native';
+import React, { useState } from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Text from './Text';
+import Screen from './Screen';
+import PickerItem from './PickerItem';
 
-import defaultStyles from '../../constants/styles'
+import defaultStyles from '../../constants/styles';
 
 export default AppPicker = ({
   icon,
@@ -25,7 +24,7 @@ export default AppPicker = ({
   selectedItem,
   width = '100%',
 }) => {
-  const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
@@ -41,9 +40,9 @@ export default AppPicker = ({
           )}
 
           {selectedItem ? (
-            <AppText style={styles.text}>{selectedItem.label}</AppText>
+            <Text style={styles.text}>{selectedItem.label}</Text>
           ) : (
-            <AppText style={styles.placeholder}>{placeholder}</AppText>
+            <Text style={styles.placeholder}>{placeholder}</Text>
           )}
 
           <MaterialCommunityIcons
@@ -65,8 +64,8 @@ export default AppPicker = ({
                 item={item}
                 label={item.label}
                 onPress={() => {
-                  setModalVisible(false)
-                  onSelectItem(item)
+                  setModalVisible(false);
+                  onSelectItem(item);
                 }}
               />
             )}
@@ -74,8 +73,8 @@ export default AppPicker = ({
         </Screen>
       </Modal>
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -95,4 +94,4 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
-})
+});

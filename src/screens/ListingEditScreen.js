@@ -1,25 +1,26 @@
-import React from 'react'
-import { StyleSheet } from 'react-native'
-import * as yup from 'yup'
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import * as yup from 'yup';
 
 import {
   AppForm as Form,
   AppFormField as FormField,
   AppFormPicker as Picker,
   SubmitButton,
-} from '../components/forms'
-import CategoryPickerItem from '../components/CategoryPickerItem'
-import FormImagePicker from '../components/forms/FormImagePicker'
-import listingsApi from '../api/listings'
-import Screen from '../components/Screen'
-import useLocation from '../hooks/useLocation'
+} from '../components/forms';
+import CategoryPickerItem from '../components/CategoryPickerItem';
+import FormImagePicker from '../components/forms/FormImagePicker';
+import listingsApi from '../api/listings';
+import Screen from '../components/Screen';
+import useLocation from '../hooks/useLocation';
 
 const validationSchema = yup.object().shape({
   title: yup.string().required().min(1).label('Title'),
   price: yup.number().required().min(1).max(10000).label('Price'),
   description: yup.string().label('Description'),
   category: yup.object().required().nullable().label('Category'),
-})
+  images: yup.array().min(1, 'Please select at least one image.'),
+});
 
 const categories = [
   {
@@ -76,17 +77,16 @@ const categories = [
     label: 'Other',
     value: 9,
   },
-]
+];
 
 export default ListingEditScreen = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   const handleSubmit = async (listing) => {
-    const result = await listingsApi.addListing({ ...listing, location })
-    if (!result.ok) 
-    return alert('Could not save the listing.')
-    alert('Success')
-  }
+    const result = await listingsApi.addListing({ ...listing, location });
+    if (!result.ok) return alert('Could not save the listing.');
+    alert('Success');
+  };
 
   return (
     <Screen style={styles.container}>
@@ -96,12 +96,12 @@ export default ListingEditScreen = () => {
           price: '',
           description: '',
           category: null,
-          // images: [],
+          images: [],
         }}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        <FormImagePicker />
+        <FormImagePicker name="images" />
         <FormField maxLength={255} name="title" placeholder="Title" />
         <FormField
           keyboardType="numeric"
@@ -128,11 +128,11 @@ export default ListingEditScreen = () => {
         <SubmitButton title="Post" />
       </Form>
     </Screen>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
-})
+});
