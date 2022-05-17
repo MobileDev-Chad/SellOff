@@ -4,7 +4,7 @@ import { useFormikContext } from 'formik';
 import ErrorMessage from './ErrorMessage';
 import ImageInputList from '../ImageInputList';
 
-export default FormImagePicker = ({ name }) => {
+function FormImagePicker({ name }) {
   const { errors, setFieldValue, touched, values } = useFormikContext();
   const imageUris = values[name];
 
@@ -29,4 +29,6 @@ export default FormImagePicker = ({ name }) => {
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
   );
-};
+}
+
+export default FormImagePicker;

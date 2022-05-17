@@ -12,14 +12,15 @@ import * as ImagePicker from 'expo-image-picker';
 import { COLORS } from '../../constants';
 
 export default ImageInput = ({ imageUri, onChangeImage }) => {
+const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted) alert('You need to enable permission to access the library.');
+  };
+
   useEffect(() => {
     requestPermission();
   }, []);
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert('You need to enable permission to access the library.');
-  };
 
   const handlePress = () => {
     if (!imageUri) selectImage();

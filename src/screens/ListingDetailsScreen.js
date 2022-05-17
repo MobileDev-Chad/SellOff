@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import AppText from '../components/Text';
+import Text from '../components/Text';
 
 import { ListItem } from '../components/lists';
 import { COLORS } from '../../constants/theme';
@@ -12,8 +12,8 @@ export default ListingDetailsScreen = ({ route }) => {
     <View>
       <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>{listing.title}</AppText>
-        <AppText style={styles.price}>${listing.price}</AppText>
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.price}>${listing.price}</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../../assets/images/mosh.jpg')}

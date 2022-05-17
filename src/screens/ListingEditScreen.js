@@ -2,12 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import * as yup from 'yup';
 
-import {
-  AppForm as Form,
-  AppFormField as FormField,
-  AppFormPicker as Picker,
-  SubmitButton,
-} from '../components/forms';
+import { Form, FormField, FormPicker as Picker, SubmitButton } from '../components/forms';
 import CategoryPickerItem from '../components/CategoryPickerItem';
 import FormImagePicker from '../components/forms/FormImagePicker';
 import listingsApi from '../api/listings';
