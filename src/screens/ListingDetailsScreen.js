@@ -16,7 +16,7 @@ export default ListingDetailsScreen = ({ route }) => {
       />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{listing.title}</AppText>
-        <AppText style={styles.price}>{listing.price}</AppText>
+        <AppText style={styles.price}>${listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../../assets/images/mosh.jpg')}
