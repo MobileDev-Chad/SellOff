@@ -1,14 +1,16 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-
-import AuthNavigator from './src/navigation/AuthNavigator';
-import AppNavigator from './src/navigation/AppNavigator';
-import navigationTheme from './src/navigation/navigationTheme';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default App = () => {
-  return (
-    <NavigationContainer theme={navigationTheme}>
-      <AppNavigator />
-    </NavigationContainer>
-  );
+  const storeData = async (value) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('person', jsonValue);
+      console.log(person);
+    } catch (e) {
+      // saving error
+    }
+  };
+  storeData();
+  return null;
 };
