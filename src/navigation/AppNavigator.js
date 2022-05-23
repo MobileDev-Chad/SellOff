@@ -10,7 +10,7 @@ import routes from './routes';
 
 const Tab = createBottomTabNavigator();
 
-const AppNavigator = () => (
+export default AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
       name="Feed"
@@ -54,4 +54,3 @@ const AppNavigator = () => (
   </Tab.Navigator>
 );
 
-export default AppNavigator;

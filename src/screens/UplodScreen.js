@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native';
 
 import { COLORS } from '../../constants';
 
-function UplodScreen({ onDone, progress = 0, visible = false }) {
+export default UplodScreen = ({ onDone, progress = 0, visible = false }) => {
   return (
     <Modal visible={visible}>
       <View style={styles.container}>
@@ -27,7 +27,7 @@ function UplodScreen({ onDone, progress = 0, visible = false }) {
       </View>
     </Modal>
   );
-}
+};
 
 const styles = StyleSheet.create({
   animation: {
@@ -39,5 +39,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-export default UplodScreen;

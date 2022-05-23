@@ -1,21 +1,21 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import Text from '../components/Text';
-import { Image } from 'react-native-expo-image-cache';
+// import { Image } from 'react-native-expo-image-cache';
 
-import ListItem from '../components/lists';
+import { ListItem } from '../components/lists';
 import { COLORS } from '../../constants/theme';
 
-const ListingDetailsScreen = ({ route }) => {
+export default ListingDetailsScreen = ({ route }) => {
   const listing = route.params;
 
   return (
     <View>
       <Image
         style={styles.image}
-        preview={{ uri: listing.images[0].thumbnailUrl }}
-        tint="light"
-        uri={listing.images[0].url}
+        // preview={{ uri: listing.images[0].thumbnailUrl }}
+        // tint="light"
+        source={{uri:listing.images[0].url}}
       />
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{listing.title}</Text>
@@ -55,4 +55,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListingDetailsScreen;

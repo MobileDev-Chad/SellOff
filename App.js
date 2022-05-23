@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import jwtDecode from 'jwt-decode';
 import { NavigationContainer } from '@react-navigation/native';
-import {AppLoading} from 'expo'
+import { AppLoading } from 'expo';
 
-import AuthContext from "./src/auth/context";
+import AuthContext from './src/auth/context';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import authStorage from './src/auth/storage';
 import AppNavigator from './src/navigation/AppNavigator';
@@ -12,20 +11,20 @@ import OfflineNotice from './src/components/OfflineNotice';
 
 export default App = () => {
   const [user, setUser] = useState();
+  const [isReady, setIsReady] = useState(false);
 
-  const restoreToken = async () => {
-    const token = await authStorage.getToken();
-    if(!token) return;
-    setUser(jwtDecode(token))
-  }
+  const restoreUser = async () => {
+    const user = await authStorage.getUser();
+    if (user) setUser(user);
+  };
 
-  useEffect(() => {
-  restoreToken()
-  }, [])
-  
+  if (!isReady)
+    return (
+      <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} />
+    );
 
   return (
-    <AuthContext.Provider value={{user, setUser}}>
+    <AuthContext.Provider value={{ user, setUser }}>
       <OfflineNotice />
       <NavigationContainer theme={navigationTheme}>
         {user ? <AppNavigator /> : <AuthNavigator />}
