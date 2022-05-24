@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import * as yup from 'yup';
 
@@ -7,8 +7,8 @@ import usersApi from '../api/users';
 import authApi from '../api/auth';
 import useAuth from '../auth/useAuth';
 import {
-  AppForm as Form,
-  AppFormField as FormField,
+  Form,
+  FormField,
   ErrorMessage,
   SubmitButton,
 } from '../components/forms';
@@ -17,7 +17,7 @@ import useApi from '../hooks/useApi';
 import ActivityIndicator from '../components/ActivityIndicator';
 
 const validationSchema = yup.object().shape({
-  name: yup.string().required().label('Name'),
+  name: yup.string().required().label('Userame'),
   email: yup.string().required().email().label('Email'),
   password: yup.string().required().min(4).label('Password'),
 });
@@ -25,7 +25,7 @@ const validationSchema = yup.object().shape({
 export default RegisterScreen = () => {
   const registerApi = useApi(usersApi.register);
   const loginApi = useApi(authApi.login);
-  const auth = useAuth();
+  const {logIn} = useAuth();
   const [error, setError] = useState();
 
   const handleSubmit = async (userInfo) => {
@@ -44,7 +44,7 @@ export default RegisterScreen = () => {
       userInfo.email,
       userInfo.password
     );
-    auth.logIn(authToken);
+    logIn(authToken);
   };
 
   return (
@@ -63,7 +63,7 @@ export default RegisterScreen = () => {
             autoCorrect={false}
             icon="account"
             name="name"
-            placeholder="Name"
+            placeholder="Username"
           />
           <FormField
             autoCapitalize="none"
