@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
 import Icon from '../components/Icon';
-import { ListItem, ListItemSeperator } from '../components/lists';
+import { ListItem, ListItemSeparator } from '../components/lists';
 import routes from '../navigation/routes';
 import Screen from '../components/Screen';
 import useAuth from '../auth/useAuth';
@@ -43,7 +43,7 @@ export default AccountScreen = ({ navigation }) => {
         <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
-          ItemSeparatorComponent={ListItemSeperator}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
