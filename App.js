@@ -21,10 +21,12 @@ export default App = () => {
 
   if (!isReady)
     return (
-      <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} onError={console.warn}/>
+      <AppLoading
+        startAsync={restoreUser}
+        onFinish={() => setIsReady(true)}
+        onError={console.warn}
+      />
     );
-
-
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
